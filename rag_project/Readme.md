@@ -108,34 +108,12 @@ project/
    - Enter your question
    - Click "Ask" to get the AI-generated answer
 
-## Customization
-
-### Adjusting Chunk Sizes
-
-Modify the chunk parameters in `views.py`:
-```python
-splitter = CharacterTextSplitter(
-    chunk_size=500,      # Size of each text chunk
-    chunk_overlap=100    # Overlap between chunks
-)
-```
-
-### Changing AI Model
-
-Replace the OpenAI model in `views.py`:
-```python
-qa = RetrievalQA.from_chain_type(
-    llm=OpenAI(temperature=0.7),  # Adjust temperature for creativity
-    chain_type="stuff",
-    retriever=retriever
-)
-```
 
 ## Troubleshooting
 
 ### Template Errors
 - Ensure `APP_DIRS=True` in settings
-- Verify template is in `your_app/templates/your_app/`
+- Verify template is in project root `/templates/`
 - Check app is in `INSTALLED_APPS`
 
 ### API Key Issues
